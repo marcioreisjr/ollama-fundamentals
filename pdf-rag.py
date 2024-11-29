@@ -1,13 +1,17 @@
-## 1. Ingest PDF Files
+from langchain_ollama import OllamaEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_community.vectorstores import Chroma
+from langchain_community.document_loaders import UnstructuredPDFLoader
+from langchain_community.document_loaders import OnlinePDFLoader
+
+# 1. Ingest PDF Files
 # 2. Extract Text from PDF Files and split into small chunks
 # 3. Send the chunks to the embedding model
 # 4. Save the embeddings to a vector database
 # 5. Perform similarity search on the vector database to find similar documents
 # 6. retrieve the similar documents and present them to the user
-## run pip install -r requirements.txt to install the required packages
+# run pip install -r requirements.txt to install the required packages
 
-from langchain_community.document_loaders import UnstructuredPDFLoader
-from langchain_community.document_loaders import OnlinePDFLoader
 
 doc_path = "./data/BOI.pdf"
 model = "llama3.2"
@@ -30,9 +34,6 @@ content = data[0].page_content
 
 # ==== Extract Text from PDF Files and Split into Small Chunks ====
 
-from langchain_ollama import OllamaEmbeddings
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import Chroma
 
 # Split and chunk
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=300)

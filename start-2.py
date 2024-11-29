@@ -29,9 +29,9 @@ res = ollama.chat(
 #     print(chunk["message"]["content"], end="", flush=True)
 
 
-# ==================================================================================
-# ==== The Ollama Python library's API is designed around the Ollama REST API ====
-# ==================================================================================
+# ============================================================================
+# == The Ollama Python library's API is designed around the Ollama REST API ==
+# ============================================================================
 
 # == Generate example ==
 res = ollama.generate(
@@ -46,13 +46,17 @@ res = ollama.generate(
 # Create a new model with modelfile
 modelfile = """
 FROM llama3.2
-SYSTEM You are very smart assistant who knows everything about oceans. You are very succinct and informative.
+SYSTEM You are very smart assistant who knows everything about oceans.
+You are very succinct and informative.
 PARAMETER temperature 0.1
 """
 
 ollama.create(model="knowitall", modelfile=modelfile)
 
-res = ollama.generate(model="knowitall", prompt="why is the ocean so salty?")
+res = ollama.generate(
+    model="knowitall",
+    prompt="why is the ocean so salty?",
+)
 print(res["response"])
 
 

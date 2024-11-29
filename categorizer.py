@@ -14,7 +14,7 @@ if not os.path.exists(input_file):
     exit(1)
 
 
-# Read the uncategorized grocery items from the input file
+# Read the non-categorized grocery items from the input file
 with open(input_file, "r") as f:
     items = f.read().strip()
 
@@ -29,9 +29,11 @@ Here is a list of grocery items:
 
 Please:
 
-1. Categorize these items into appropriate categories such as Produce, Dairy, Meat, Bakery, Beverages, etc.
+1. Categorize these items into appropriate categories such as Produce, Dairy,
+Meat, Bakery, Beverages, etc.
 2. Sort the items alphabetically within each category.
-3. Present the categorized list in a clear and organized manner, using bullet points or numbering.
+3. Present the categorized list in a clear and organized manner, using bullet
+points or numbering.
 
 """
 

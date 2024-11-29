@@ -1,6 +1,6 @@
 ollama
 chromadb
-pdfplumber 
+pdfplumber
 langchain
 langchain-core
 langchain-ollama
@@ -12,3 +12,4 @@ fastembed
 pdfplumber
 sentence-transformers
 elevenlabs
+requests
